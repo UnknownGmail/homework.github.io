@@ -1,0 +1,24 @@
+# A .mp4 or .ogg to .html converter
+
+# First step is to get a html code editor like onecompliler.com or make a new .txt file using websites like https://texteditor.co/
+
+# Second step is to import this code:
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<video width="320" height="240" controls>
+  <source src="url .mp4 goes here" type="video/mp4">
+  <source src="url .ogg goes here" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+
+</body>
+</html>
+
+# Third step is to paste a url with a .mp4 at the end where it say: "url .mp4 goes here" or replace a url with a .ogg at the end where it says: "url .ogg goes here"
+
+# Fourth Step is to run and test it if it is a html code editor
+
+# Final step is to download or rename it as a .html

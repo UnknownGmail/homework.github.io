@@ -1,0 +1,6 @@
+1. Go to singlefile.html
+2. Go to setting
+3. Go to tab cloak
+4. Next go to Set Tab title and change it to "Google Drive"
+5. Then go to Set Tab Icon
+6. Lastly change it to this: "https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png"

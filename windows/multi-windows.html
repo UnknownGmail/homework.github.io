@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi Website Viewer</title>
+
+<style>
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #111;
+}
+
+/* top bar */
+.bar {
+  height: 50px;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+/* buttons */
+button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #555;
+}
+
+/* iframe */
+iframe {
+  width: 100%;
+  height: calc(100% - 50px);
+  border: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bar">
+  <button onclick="prev()">⬅ Back</button>
+  <span id="title">Loading...</span>
+  <button onclick="next()">Next ➡</button>
+</div>
+
+<iframe id="frame"></iframe>
+
+<script>
+const sites = [
+  {
+    name: "Browserling",
+    url: "https://www.browserling.com/"
+  },
+  {
+    name: "Windows Web",
+    url: "https://windows-web.vercel.app/"
+  },
+  {
+    name: "Windows 11 GitHub",
+    url: "https://chrishtu.github.io/windows11/"
+  },
+  {
+    name: "Scratch Project",
+    url: "https://scratch.mit.edu/projects/683358668/embed"
+  },
+  {
+    name: "Win11 Web",
+    url: "https://win11-web.vercel.app/"
+  },
+  {
+    name: "Win11 NotAPerson",
+    url: "https://win11.notaperson535.is-a.dev/"
+  }
+];
+
+let index = 0;
+
+const frame = document.getElementById("frame");
+const title = document.getElementById("title");
+
+function loadSite() {
+  frame.src = sites[index].url;
+  title.textContent = `${sites[index].name} (${index + 1}/${sites.length})`;
+}
+
+function next() {
+  index = (index + 1) % sites.length;
+  loadSite();
+}
+
+function prev() {
+  index = (index - 1 + sites.length) % sites.length;
+  loadSite();
+}
+
+loadSite();
+</script>
+
+</body>
+</html>
